@@ -1,15 +1,18 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { TouchableOpacity, Text, StyleSheet } from "react-native";
 
 interface MyButtonProps {
   onPress: () => void;
-  text: string;
+  children: ReactNode;
 }
 
-export const MyButton = ({ onPress, text }: MyButtonProps) => {
+export const MyButton = ({ onPress, children }: MyButtonProps) => {
   return (
-    <TouchableOpacity style={styles.container} onPress={onPress}>
-      <Text style={styles.text}>{text}</Text>
+    <TouchableOpacity
+      className="px-8 py-2 bg-purple-600 self-start rounded-lg"
+      onPress={onPress}
+    >
+      <Text className="text-white text-base font-bold">{children}</Text>
     </TouchableOpacity>
   );
 };

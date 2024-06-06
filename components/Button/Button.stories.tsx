@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import React from "react";
-import { View } from "react-native";
+import { Text, View } from "react-native";
 import { MyButton } from "./Button";
 
 const meta = {
   title: "MyButton",
   component: MyButton,
   args: {
-    text: "Hello world",
+    children: <Text>Child component</Text>,
   },
   decorators: [
     (Story) => (
